@@ -2,12 +2,7 @@
 backend fullname
 */}}
 {{- define "loki.backendFullname" -}}
-{{- $isSingleBinary := eq (include "loki.deployment.isSingleBinary" .) "true" -}}
-{{- if $isSingleBinary -}}
-{{ include "loki.singleBinaryFullname" . }}
-{{- else -}}
 {{ include "loki.name" . }}-backend
-{{- end }}
 {{- end }}
 
 {{/*

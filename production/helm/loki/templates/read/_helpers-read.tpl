@@ -2,12 +2,7 @@
 read fullname
 */}}
 {{- define "loki.readFullname" -}}
-{{- $isSingleBinary := eq (include "loki.deployment.isSingleBinary" .) "true" -}}
-{{- if $isSingleBinary -}}
-{{ include "loki.singleBinaryFullname" . }}
-{{- else -}}
 {{ include "loki.name" . }}-read
-{{- end }}
 {{- end }}
 
 {{/*
